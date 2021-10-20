@@ -14,8 +14,7 @@ function setup() {
     "yellow"
   ];
 }
-function mousePressed() {
-  print('mousePressed');
+function mouseDragged() {
   let r = random(10, 70);
   let dx = random(-5, 5);
   let dy = 7;
@@ -41,18 +40,14 @@ class Ball {
     this.radius = radius;
   }
   show() {
-    print('show' + this.x + ' ' + this.y + ' ' + this.dx + ' ' + this.dy);
-    strokeWeight(1)
-    stroke(255,0,0);
-    
-    print(this.randColor);
-    print(colors[this.randColor]); 
+    // strokeWeight(1)
+    // stroke(255,0,0);
+    noStroke();
     fill(colors[this.randColor]);
-    // fill(255, 0, 0);
+    // fill(255, 0, 0,150);
     ellipse(this.x, this.y, this.radius, this.radius);
   }
   bounce() {
-    print("bouncing");
     if (this.x >= width - this.radius || this.x < 0 ) this.dx = -this.dx * friction;
     this.x += this.dx;
     if (this.y >= height - this.radius || this.y < 0) this.dy = -this.dy * friction;
