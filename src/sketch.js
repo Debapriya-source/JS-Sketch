@@ -1,10 +1,11 @@
 let b = [];
-let g = 1;
+let g = 0.4;
 let color;
 let friction = 0.99;
+let alfa,beta,gamma;
 
 function setup() {
-  createCanvas(windowWidth-10, windowHeight-20);
+  createCanvas(windowWidth, windowHeight);
   colors= [
     "red",
     "cyan",
@@ -14,8 +15,14 @@ function setup() {
     "yellow"
   ];
 }
+window.addEventListener('deviceorientation',function(e){
+  // alfa = e.alfa;
+  beta = e.beta;
+  gamma = e.gamma;
+  e.absolute = true;
+});
 function mouseDragged() {
-  let r = random(10, 70);
+  let r = random(10, 50);
   let dx = random(-5, 5);
   let dy = 7;
   let randColor = floor(random(colors.length));
@@ -23,6 +30,7 @@ function mouseDragged() {
   b.push(newBall);
 }
 function draw() {
+ 
   background(255);
   for (let i = 0; i < b.length; i++) {
     b[i].bounce();
@@ -40,18 +48,18 @@ class Ball {
     this.radius = radius;
   }
   show() {
-    // strokeWeight(1)
-    // stroke(255,0,0);
     noStroke();
+    push();
+    translate(0,0);
     fill(colors[this.randColor]);
-    // fill(255, 0, 0,150);
     ellipse(this.x, this.y, this.radius, this.radius);
+    pop();
   }
   bounce() {
-    if (this.x >= width - this.radius || this.x < 0 ) this.dx = -this.dx * friction;
-    this.x += this.dx;
-    if (this.y >= height - this.radius || this.y < 0) this.dy = -this.dy * friction;
-    else this.dy +=g;
-    this.y += this.dy;
+    if (this.x +this.radius + this.dx-gamma/10  >= width|| this.x+this.radius + this.dx-gamma/10  <= 25 ) this.dx = -(this.dx+(gamma/10)) * friction+this.radius/100;
+    this.x += this.dx+gamma/10;
+    if (this.y+this.radius+this.dy-beta/10 >= height || this.y+this.radius+this.dy-beta/10 <= 25 ) this.dy = -(this.dy+(beta/10)) * friction+this.radius/100;
+    else this.dy +=g+beta/10;
+    this.y += this.dy+beta/10;
   }
 }
