@@ -1,5 +1,5 @@
 let b = [];
-let g = 4;
+let g = 2;
 let color;
 let friction = 0.99;
 
