@@ -1,15 +1,16 @@
-let x=0;
 
 function setup() {
     createCanvas(750, 400);
-    background(0);
   }
 
   function draw() {
-    noStroke();
-    fill(500,500);
-    circle(x, 60*sin(x)+height/2, 5, 5);
-    x+=0.25;
-
-    if(x>width-10) x=0;
+    background(0);
+    strokeWeight(4);
+    stroke(255);
+    for(let x= 0;x<=width;x+=50) {
+      for (let y = 20; y < height; y+=50) {    
+      fill(255,0,random(255));
+      ellipse(x, y, 25, 25);
+      }
+    }
   }
