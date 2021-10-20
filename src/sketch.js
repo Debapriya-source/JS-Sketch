@@ -1,10 +1,10 @@
 let b = [];
-let g = 2;
+let g = 1;
 let color;
 let friction = 0.99;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth-10, windowHeight-20);
   colors= [
     "red",
     "cyan",
