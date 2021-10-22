@@ -5,7 +5,7 @@ let friction = 0.99;
 let alfa,beta,gamma;
 
 function setup() {
-  let cnv = createCanvas(windowWidth-5, windowHeight-100);
+  let cnv = createCanvas(windowWidth-18, windowHeight-100);
   colors= [
     "red",
     "cyan",
