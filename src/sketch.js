@@ -59,16 +59,17 @@ class Ball {
   bounce() {
     
     if (this.x +this.radius + this.dx-gamma/10  >= width|| this.x+this.radius + this.dx-gamma/10  <= 25 ) {
-    this.dx = -(this.dx+(gamma/10)) * friction+this.radius/100;
+    this.dx = -(this.dx) * friction+this.radius/100;
     // print("Hit the wall");
     }
     this.x += this.dx+gamma/10;
-    if (this.y+this.radius+this.dy-beta/10 >= height || this.y+this.radius+this.dy-beta/10 <= 25 ) {
-    this.dy = -(this.dy+(beta/20)) * friction+this.radius/100;
+    if (this.y+this.radius+this.dy-beta/20 >= height || this.y+this.radius+this.dy-beta/20 <= 20 ) {
+    this.dy = -(this.dy) * friction+this.radius/100;
     // print("Hit the ground");
     }
-    else this.dy +=g+beta/100;
-    this.y += this.dy+beta/20;
+    else this.dy +=g+beta/20;
+    // this.y += this.dy+beta/20;
+    this.y+=this.dy;
     // print(this.x,this.y, "height: "+ height,this.dx,this.dy);
 
     // to prevent drowning
@@ -87,6 +88,7 @@ class Ball {
       this.dx = 0;
       }
       this.x++;
+    }
     if(this.y>height){
       if(this.y ==height){
       this.y = height;
@@ -104,5 +106,5 @@ class Ball {
       this.y++;
     }
   }
-  }
+
 }
