@@ -1,11 +1,11 @@
 let b = [];
-let g = 0.4;
+let g = 0.15;
 let color;
 let friction = 0.99;
 let alfa,beta,gamma;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let cnv = createCanvas(windowWidth-10, windowHeight-20);
   colors= [
     "red",
     "cyan",
@@ -14,6 +14,7 @@ function setup() {
     "green",
     "yellow"
   ];
+  cnv.parent("canvas-container");
 }
 window.addEventListener('deviceorientation',function(e){
   // alfa = e.alfa;
@@ -66,7 +67,7 @@ class Ball {
     this.dy = -(this.dy+(beta/10)) * friction+this.radius/100;
     // print("Hit the ground");
     }
-    else this.dy +=g+beta/10;
+    else this.dy +=g+beta/25;
     this.y += this.dy+beta/10;
     // print(this.x,this.y, "height: "+ height,this.dx,this.dy);
 
