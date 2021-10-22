@@ -5,7 +5,7 @@ let friction = 0.99;
 let alfa,beta,gamma;
 
 function setup() {
-  let cnv = createCanvas(windowWidth-50, windowHeight-100);
+  let cnv = createCanvas(windowWidth-20, windowHeight-100);
   colors= [
     "red",
     "cyan",
@@ -15,6 +15,7 @@ function setup() {
     "yellow"
   ];
   cnv.parent("canvas-container");
+  cnv.style("border-radius","20px");
 }
 window.addEventListener('deviceorientation',function(e){
   // alfa = e.alfa;
@@ -72,6 +73,21 @@ class Ball {
     // print(this.x,this.y, "height: "+ height,this.dx,this.dy);
 
     // to prevent drowning
+    if(this.x>width){
+      if(this.x ==width){
+      this.x = width;
+      gamma = 0;
+      this.dx = 0;
+      }
+      this.x--;
+    }
+    if(this.x<0){
+      if(this.x ==0){
+      this.x =0;
+      gamma=0;
+      this.dx = 0;
+      }
+      this.x++;
     if(this.y>height){
       if(this.y ==height){
       this.y = height;
@@ -88,5 +104,6 @@ class Ball {
       }
       this.y++;
     }
+  }
   }
 }
