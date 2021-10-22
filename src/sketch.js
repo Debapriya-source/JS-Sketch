@@ -49,16 +49,19 @@ class Ball {
   }
   show() {
     noStroke();
-    push();
-    translate(0,0);
+    // push();
+    // translate(0,0);
     fill(colors[this.randColor]);
     ellipse(this.x, this.y, this.radius, this.radius);
-    pop();
+    // pop();
   }
   bounce() {
-    if (this.x +this.radius + this.dx-gamma/10  >= width|| this.x+this.radius + this.dx-gamma/10  <= 25 ) this.dx = -(this.dx+(gamma/10)) * friction+this.radius/100;
+    
+    if (this.x +this.radius + this.dx-gamma/10  >= width|| this.x+this.radius + this.dx-gamma/10  <= 25 ) 
+    this.dx = -(this.dx+(gamma/10)) * friction+this.radius/100;
     this.x += this.dx+gamma/10;
-    if (this.y+this.radius+this.dy-beta/10 >= height || this.y+this.radius+this.dy-beta/10 <= 25 ) this.dy = -(this.dy+(beta/10)) * friction+this.radius/100;
+    if (this.y+this.radius+this.dy-beta/10 >= height || this.y+this.radius+this.dy-beta/10 <= 25 ) 
+    this.dy = -(this.dy+(beta/10)) * friction+this.radius/100;
     else this.dy +=g+beta/10;
     this.y += this.dy+beta/10;
   }
