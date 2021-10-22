@@ -68,8 +68,8 @@ class Ball {
     // print("Hit the ground");
     }
     else this.dy +=g+beta/20;
-    // this.y += this.dy+beta/20;
-    this.y+=this.dy;
+    this.y += this.dy+beta/150;
+    // this.y+=this.dy;
     // print(this.x,this.y, "height: "+ height,this.dx,this.dy);
 
     // to prevent drowning
