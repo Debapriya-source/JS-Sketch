@@ -67,7 +67,7 @@ class Ball {
     this.dy = -(this.dy+(beta/10)) * friction+this.radius/100;
     // print("Hit the ground");
     }
-    else this.dy +=g+beta/25;
+    else this.dy +=g;
     this.y += this.dy+beta/10;
     // print(this.x,this.y, "height: "+ height,this.dx,this.dy);
 
