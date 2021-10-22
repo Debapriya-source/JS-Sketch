@@ -57,12 +57,29 @@ class Ball {
   }
   bounce() {
     
-    if (this.x +this.radius + this.dx-gamma/10  >= width|| this.x+this.radius + this.dx-gamma/10  <= 25 ) 
+    if (this.x +this.radius + this.dx-gamma/10  >= width|| this.x+this.radius + this.dx-gamma/10  <= 25 ) {
     this.dx = -(this.dx+(gamma/10)) * friction+this.radius/100;
+    // print("Hit the wall");
+    }
     this.x += this.dx+gamma/10;
-    if (this.y+this.radius+this.dy-beta/10 >= height || this.y+this.radius+this.dy-beta/10 <= 25 ) 
+    if (this.y+this.radius+this.dy-beta/10 >= height || this.y+this.radius+this.dy-beta/10 <= 25 ) {
     this.dy = -(this.dy+(beta/10)) * friction+this.radius/100;
+    // print("Hit the ground");
+    }
     else this.dy +=g+beta/10;
     this.y += this.dy+beta/10;
+    // print(this.x,this.y, "height: "+ height,this.dx,this.dy);
+
+    // to prevent drowning
+    if(this.y>height){
+      if(this.y ==height)
+      this.y = height;
+      this.y--;
+    }
+    if(this.y<0){
+      if(this.y ==0)
+      this.y =0;
+      this.y++;
+    }
   }
 }
