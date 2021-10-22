@@ -25,7 +25,7 @@ window.addEventListener('deviceorientation',function(e){
 function mouseDragged() {
   let r = random(10, 30);
   let dx = random(-5, 5);
-  let dy = 7;
+  let dy = 5;
   let randColor = floor(random(colors.length));
   let newBall = new Ball(mouseX, mouseY, dx, dy, r,randColor);
   b.push(newBall);
