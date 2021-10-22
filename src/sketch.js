@@ -1,5 +1,5 @@
 let b = [];
-let g = 0.2;
+let g = 0.15;
 let color;
 let friction = 0.99;
 let alfa,beta,gamma;
@@ -64,11 +64,11 @@ class Ball {
     }
     this.x += this.dx+gamma/10;
     if (this.y+this.radius+this.dy-beta/10 >= height || this.y+this.radius+this.dy-beta/10 <= 25 ) {
-    this.dy = -(this.dy+(beta/10)) * friction+this.radius/100;
+    this.dy = -(this.dy+(beta/20)) * friction+this.radius/100;
     // print("Hit the ground");
     }
-    else this.dy +=g;
-    this.y += this.dy+beta/10;
+    else this.dy +=g+beta/100;
+    this.y += this.dy+beta/20;
     // print(this.x,this.y, "height: "+ height,this.dx,this.dy);
 
     // to prevent drowning
