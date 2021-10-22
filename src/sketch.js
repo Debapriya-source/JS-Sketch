@@ -72,13 +72,17 @@ class Ball {
 
     // to prevent drowning
     if(this.y>height){
-      if(this.y ==height)
+      if(this.y ==height){
       this.y = height;
+      beta = 0;
+      }
       this.y--;
     }
     if(this.y<0){
-      if(this.y ==0)
+      if(this.y ==0){
       this.y =0;
+      beta=0;
+      }
       this.y++;
     }
   }
