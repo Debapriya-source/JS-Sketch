@@ -15,7 +15,6 @@ function setup() {
     "yellow"
   ];
   cnv.parent("canvas-container");
-  cnv.style("border-radius","20px");
 }
 window.addEventListener('deviceorientation',function(e){
   // alfa = e.alfa;
