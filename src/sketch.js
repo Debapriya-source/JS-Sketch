@@ -23,7 +23,7 @@ window.addEventListener('deviceorientation',function(e){
   e.absolute = true;
 });
 function mouseDragged() {
-  let r = random(10, 50);
+  let r = random(10, 30);
   let dx = random(-5, 5);
   let dy = 7;
   let randColor = floor(random(colors.length));
