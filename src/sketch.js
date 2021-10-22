@@ -1,5 +1,5 @@
 let b = [];
-let g = 0.3;
+let g = 0;
 let color;
 let friction = 0.99;
 let alfa,beta,gamma;
@@ -68,7 +68,7 @@ class Ball {
     // print("Hit the ground");
     }
     else this.dy +=g+beta/20;
-    this.y += this.dy+beta/150;
+    this.y += this.dy+beta/50;
     // this.y+=this.dy;
     // print(this.x,this.y, "height: "+ height,this.dx,this.dy);
 
