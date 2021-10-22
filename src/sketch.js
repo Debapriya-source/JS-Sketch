@@ -5,7 +5,7 @@ let friction = 0.99;
 let alfa,beta,gamma;
 
 function setup() {
-  let cnv = createCanvas(windowWidth-25, windowHeight-20);
+  let cnv = createCanvas(windowWidth-50, windowHeight-100);
   colors= [
     "red",
     "cyan",
@@ -76,6 +76,7 @@ class Ball {
       if(this.y ==height){
       this.y = height;
       beta = 0;
+      this.dy = 0;
       }
       this.y--;
     }
@@ -83,6 +84,7 @@ class Ball {
       if(this.y ==0){
       this.y =0;
       beta=0;
+      this.dy = 0;
       }
       this.y++;
     }
